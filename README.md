@@ -1,7 +1,3 @@
-Here's a simple, informative, and clean `README.md` for your **Explain This Commit** tool (GPT + GitHub API, minimal UI):
-
----
-
 ## 🧠 Explain This Commit
 
 A developer tool that explains GitHub commits in plain English using the power of OpenAI's GPT models.
