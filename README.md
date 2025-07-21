@@ -1,80 +1,100 @@
-# GPT Toolkit Boilerplate 🧠⚙️
-
-A monorepo boilerplate for building OpenAI-powered developer tools using Fastify (API), Next.js (UI), and reusable utility packages with PNPM workspaces.
+Here's a simple, informative, and clean `README.md` for your **Explain This Commit** tool (GPT + GitHub API, minimal UI):
 
 ---
 
-## 🧱 Monorepo Structure
+## 🧠 Explain This Commit
 
-```
+A developer tool that explains GitHub commits in plain English using the power of OpenAI's GPT models.
 
-gpt-toolkit-boilerplate/
-├── apps/
-│   ├── api/      → Fastify backend (OpenAI, REST APIs)
-│   └── web/      → Next.js frontend (minimal, optional UI)
-├── packages/
-│   └── utils/    → Shared GPT/OpenAI client + helpers
+> Paste a GitHub commit URL → get an instant explanation.
 
-````
+![Landing Screenshot](./apps/web/public/landing.png)
 
 ---
 
-## 🚀 Getting Started
+### 📦 Tech Stack
 
-### 1. Install dependencies
+* **Frontend**: Next.js 15 (App Router)
+* **Backend**: Fastify (TypeScript)
+* **AI**: OpenAI GPT API
+
+---
+
+### 🚀 Getting Started
+
+#### 1. Clone & Install
 
 ```bash
+git clone https://github.com/yourusername/commit-explainer.git
+cd commit-explainer
 pnpm install
-````
-
-### 2. Set environment variables
-
-Create `.env` inside `apps/api/`:
-
 ```
+
+#### 2. Set Up Environment
+
+Create an `.env` file inside `apps/api/`:
+
+```env
+# apps/api/.env
 OPENAI_API_KEY=your_openai_api_key_here
+GITHUB_TOKEN=your_github_token
 ```
 
-### 3. Run the backend
+You can get your OpenAI API key from: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+
+#### 3. Run Locally
+
+In one terminal:
 
 ```bash
 pnpm --filter api dev
+# Fastify server on http://localhost:3001
 ```
 
-### 4. Run the frontend (Next.js)
+In another terminal:
 
 ```bash
 pnpm --filter web dev
+# Next.js app on http://localhost:3000
 ```
 
 ---
 
-## 🧩 Tech Stack
+### 🧪 How It Works
 
-* ⚡ Fastify (API server)
-* 🧠 OpenAI SDK (GPT)
-* ⚛️ Next.js (Frontend)
-* 🧪 TypeScript
-* 📦 PNPM Workspaces
-
----
-
-## 📦 Shared Utilities
-
-* `packages/utils/gptClients.ts` → OpenAI wrapper (chat completions, reusable logic)
+1. Paste a GitHub commit URL (e.g., `https://github.com/user/repo/commit/abcd123`)
+2. Frontend sends a `POST` request to `/explain`
+3. Backend uses GitHub API to fetch the commit diff
+4. GPT generates a plain-English explanation
+5. Result shown in the UI
 
 ---
 
-## 🔐 Environment Setup
-
-For `apps/api/`, add `.env` with:
+### 📁 Project Structure
 
 ```
-OPENAI_API_KEY=sk-xxx
+commit-explainer/
+├── apps/
+│   ├── api/         # Fastify backend
+│   └── web/         # Next.js frontend
+├── packages/
+│   └── utils/       # GPT + GitHub clients
+├── .gitignore
+├── pnpm-workspace.yaml
+└── README.md
 ```
 
 ---
 
-## 📌 License
+### 🧩 TODOs
 
-MIT — free for personal and commercial use.
+* [ ] Input validation (URL format)
+* [ ] Error handling (invalid commit / no diff)
+* [ ] Caching results
+* [ ] Deploy (Vercel + Render)
+
+---
+
+### 📜 License
+
+MIT © 2025 \Piyush Soni
