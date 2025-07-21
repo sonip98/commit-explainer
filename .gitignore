@@ -1,0 +1,26 @@
+# Node
+node_modules/
+dist/
+*.log
+
+# Env
+.env
+.env.*.local
+apps/**/.env
+apps/**/.env.*
+
+# Build
+.next/
+out/
+*.tsbuildinfo
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# OS
+Thumbs.db
+
+# pnpm
+pnpm-lock.yaml
