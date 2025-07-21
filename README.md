@@ -93,4 +93,4 @@ commit-explainer/
 
 ### 📜 License
 
-MIT © 2025 \Piyush Soni
+MIT © 2025 Piyush Soni
